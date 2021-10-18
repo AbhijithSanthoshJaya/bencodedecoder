@@ -8,8 +8,9 @@ Use the package manager [pip] install [git+https://github.com/AbhijithSanthoshJa
 
 ## Usage
 
-python
+```python
+
 import bencodedecoder
 returns 42
-
 bencodedecoder.decoder("i45e")
+```
