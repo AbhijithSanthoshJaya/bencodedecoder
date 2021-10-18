@@ -5,7 +5,7 @@ setup(
     version='0.0.1',
 
     description="Bencoded data Decoder package",
-    long_description=open('README.rst').read(),
+    long_description=open('README.md').read(),
     license='GPLv2',
     url= 'https://github.com/AbhijithSanthoshJaya/bencode-decoder',
     author='Abhijith Santhosh Jaya',
@@ -17,13 +17,13 @@ setup(
 
     test_suite='tests',
 
-    install_requires=[
+    # install_requires=[
         
-    ],
+    # ],
 
-    tests_require=[
+    # tests_require=[
         
-    ],
+    # ],
 
     entry_points={
         'console_scripts': [
