@@ -43,7 +43,7 @@ def decodeBenList(bencodedData:str):
     except Exception as e:
         print(e) 
         return None,None
-        
+
 def decoderMapper(bencodedData:str):
     try:
         length = len(bencodedData)
@@ -54,7 +54,8 @@ def decoderMapper(bencodedData:str):
             bencodedType = 's'
         bencode_mapper = {
             "i": decodeBenInt,
-            "s": decodeBenString
+            "s": decodeBenString,
+            "l": decodeBenList
         }
         if(bencodedType in bencode_mapper.keys()):
             decodedData, bencodedData = bencode_mapper[bencodedType](bencodedData)
