@@ -1,10 +1,12 @@
 # bencode-decoder
 
 ===================
-Bencode Decoder Module
+
+# Bencode Decoder Module
+
 ===================
 
-**A Python library that decodes a valid Bencoded data input**
+# A Python library that decodes a valid Bencoded data input
 
 The module supports all 4 bencode data types.
 ##Installation
