@@ -43,6 +43,28 @@ def decodeBenList(bencodedData:str):
     except Exception as e:
         print(e) 
         return None,None
+        
+def decodeBenDict(bencodedData:str):
+    try:
+        decodedDict = {}
+        bencodedData = bencodedData[1:]
+        length = len(bencodedData)
+        while(length > 1):
+            while(bencodedData[0:1] != 'e' ):
+                dictKey,bencodedData = decoderMapper(bencodedData)
+                if bencodedData[0:1] == 'e':
+                    dictValue = None
+                else:
+                    dictValue,bencodedData = decoderMapper(bencodedData)
+                if dictKey in decodedDict:
+                    raise Exception("Duplicate keys in bencoded dictionary")
+                decodedDict[dictKey] = dictValue
+                length = len(bencodedData)
+            bencodedData = bencodedData[1:]
+        return decodedDict,bencodedData
+    except Exception as e:
+        print(e) 
+        return None,None
 
 def decoderMapper(bencodedData:str):
     try:
@@ -53,13 +75,13 @@ def decoderMapper(bencodedData:str):
         elif( ':' in bencodedData):
             bencodedType = 's'
         bencode_mapper = {
+            "d": decodeBenDict,
             "l": decodeBenList,
             "i": decodeBenInt,
             "s": decodeBenString
         }
         if(bencodedType in bencode_mapper.keys()):
             decodedData, bencodedData = bencode_mapper[bencodedType](bencodedData)
-            #print('Decoded data, bencodedData', decodedData,bencodedData)
             return decodedData, bencodedData
         else:
             raise Exception('Invalid bencoded input')
@@ -68,7 +90,6 @@ def decoderMapper(bencodedData:str):
         return None,None
 
 def decoder(bencodedData):
-    #validFlag,bencodeType = bencode_validator(bencodedData)
     decodedData,bencodedData = decoderMapper(bencodedData)
     return decodedData
 
