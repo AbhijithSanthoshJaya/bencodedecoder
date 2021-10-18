@@ -30,7 +30,7 @@ def decodeBenString(bencodedData:str):
     except Exception as e:
         print(e) 
         return None,None
-        
+
 def decodeBenList(bencodedData:str):
     try:
         decodedList = []
@@ -53,6 +53,7 @@ def decoderMapper(bencodedData:str):
         elif( ':' in bencodedData):
             bencodedType = 's'
         bencode_mapper = {
+            "l": decodeBenList,
             "i": decodeBenInt,
             "s": decodeBenString
         }
@@ -66,9 +67,9 @@ def decoderMapper(bencodedData:str):
         print(e)
         return None,None
 
-
 def decoder(bencodedData):
     #validFlag,bencodeType = bencode_validator(bencodedData)
     decodedData,bencodedData = decoderMapper(bencodedData)
     return decodedData
+
    
