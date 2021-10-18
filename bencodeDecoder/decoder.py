@@ -31,41 +31,6 @@ def decodeBenString(bencodedData:str):
         print(e) 
         return None,None
 
-def decodeBenList(bencodedData:str):
-    try:
-        decodedList = []
-        bencodedData = bencodedData[1:]
-        while(bencodedData[0] != 'e'):  
-            decodedData, bencodedData = decoderMapper(bencodedData)
-            print(bencodedData)
-            decodedList.append(decodedData)
-        return decodedList, bencodedData[1:]
-    except Exception as e:
-        print(e) 
-        return None,None
-        
-def decodeBenDict(bencodedData:str):
-    try:
-        decodedDict = {}
-        bencodedData = bencodedData[1:]
-        length = len(bencodedData)
-        while(length > 1):
-            while(bencodedData[0:1] != 'e' ):
-                dictKey,bencodedData = decoderMapper(bencodedData)
-                if bencodedData[0:1] == 'e':
-                    dictValue = None
-                else:
-                    dictValue,bencodedData = decoderMapper(bencodedData)
-                if dictKey in decodedDict:
-                    raise Exception("Duplicate keys in bencoded dictionary")
-                decodedDict[dictKey] = dictValue
-                length = len(bencodedData)
-            bencodedData = bencodedData[1:]
-        return decodedDict,bencodedData
-    except Exception as e:
-        print(e) 
-        return None,None
-
 def decoderMapper(bencodedData:str):
     try:
         length = len(bencodedData)
@@ -75,8 +40,6 @@ def decoderMapper(bencodedData:str):
         elif( ':' in bencodedData):
             bencodedType = 's'
         bencode_mapper = {
-            "d": decodeBenDict,
-            "l": decodeBenList,
             "i": decodeBenInt,
             "s": decodeBenString
         }
