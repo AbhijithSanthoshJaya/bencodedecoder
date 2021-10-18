@@ -31,7 +31,7 @@ bencode.decode("l3:abc4:xyzei35ee")
 bencode.decode("5:lover")
 # result "lover
 
-# enter  encoded string input --> ""
+# enter  encoded dictionary input --> "d4:kitei42e3:tri4:spame"
 bencode.decode("d4:kitei42e3:tri4:spame")
 # result {'kite': 42, 'tri': spam}
 
