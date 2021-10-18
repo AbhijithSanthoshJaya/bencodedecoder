@@ -42,9 +42,9 @@ class S3TestCase(unittest.TestCase):
         Bencode Decoder unit test for dict type input
         """
         output = {}
-        test_input = "d4:keeei42e3:tri4:spame"
+        test_input = "d4:kitei42e3:tri4:spame"
         output = decoder(test_input)
-        expected_output = {'keee': 42, 'tri': 'spam'}
+        expected_output = {'kite': 42, 'tri': 'spam'}
         self.assertEqual(expected_output,output)
         return
 
