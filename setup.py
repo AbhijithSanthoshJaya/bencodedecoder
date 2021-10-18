@@ -25,8 +25,8 @@ setup(
         
     # ],
 
-    entry_points={
-        'console_scripts': [
-        ]
-    },
+    # entry_points={
+    #     'console_scripts': [
+    #     ]
+    # },
 )
