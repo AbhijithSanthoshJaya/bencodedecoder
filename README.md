@@ -5,8 +5,11 @@ A Python library that decodes a valid Bencoded data input. The module supports a
 ## Installation
 
 package_git_repo_url = https://github.com/AbhijithSanthoshJaya/bencodedecoder.git
+
 Use the package manager pip:
 pip install git+[package_git_repo_url]
+
+Ensure
 
 ## Usage
 
@@ -32,7 +35,7 @@ bencode.decode("d4:kitei42e3:tri4:spame")
 
 ```
 
-## Extend library and Testing
+## Testing
 
 1. Clone the repo in your dev environment.
 2. make a virtual environment in the root directory ( python -m env /path/to/environment)
