@@ -8,6 +8,7 @@
 .idea
 __pycache__
 # exclude our virtualenv
+venv_test/
 venv_pixmob/
 
 # no build
