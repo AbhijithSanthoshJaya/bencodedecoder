@@ -37,7 +37,7 @@ class S3TestCase(unittest.TestCase):
         #print(output)
         self.assertEqual(expected_output,output)
         return
-        
+
     def test_bencode_decoder_list(self):
         """
         Bencode Decoder unit test for list type input
