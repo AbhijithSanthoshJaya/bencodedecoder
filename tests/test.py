@@ -24,7 +24,7 @@ class S3TestCase(unittest.TestCase):
         output = decoder(test_input)
         #print(output)
         self.assertEqual(expected_output,output)
-        return
+    
 
     def test_bencode_decoder_int(self):
         """
@@ -36,9 +36,19 @@ class S3TestCase(unittest.TestCase):
         output = decoder(test_input)
         #print(output)
         self.assertEqual(expected_output,output)
+
+    def test_test_bencode_decoder_dict(self):
+        """
+        Bencode Decoder unit test for dict type input
+        """
+        output = {}
+        test_input = "d4:keeei42e3:tri4:spame"
+        output = decoder(test_input)
+        expected_output = {'keee': 42, 'tri': 'spam'}
+        self.assertEqual(expected_output,output)
         return
 
-    def test_bencode_decoder_list(self):
+    def test_test_bencode_decoder_list(self):
         """
         Bencode Decoder unit test for list type input
         """
