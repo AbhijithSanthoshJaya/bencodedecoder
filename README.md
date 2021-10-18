@@ -6,10 +6,12 @@ A Python library that decodes a valid Bencoded data input. The module supports a
 
 package_git_repo_url = https://github.com/AbhijithSanthoshJaya/bencodedecoder.git
 
-Use the package manager pip:
+Note: Kindly make a new virtual environment bprior to installation
+
+To install use the package manager pip:
 pip install git+[package_git_repo_url]
 
-Ensure
+Ensure the package is installed correctly using pip list and shows up as bencodedDecoder
 
 ## Usage
 

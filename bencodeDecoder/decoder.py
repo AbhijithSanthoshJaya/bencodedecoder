@@ -43,7 +43,6 @@ def decodeBenList(bencodedData:str):
         return None,None
 
 
-
 def decodeBenDict(bencodedData:str):
     try:
         decodedDict = {}
