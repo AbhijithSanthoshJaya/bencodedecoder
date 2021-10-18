@@ -30,19 +30,7 @@ def decodeBenString(bencodedData:str):
     except Exception as e:
         print(e) 
         return None,None
-        
-def decodeBenList(bencodedData:str):
-    try:
-        decodedList = []
-        bencodedData = bencodedData[1:]
-        while(bencodedData[0] != 'e'):  
-            decodedData, bencodedData = decoderMapper(bencodedData)
-            print(bencodedData)
-            decodedList.append(decodedData)
-        return decodedList, bencodedData[1:]
-    except Exception as e:
-        print(e) 
-        return None,None
+
 
 def decoderMapper(bencodedData:str):
     try:
