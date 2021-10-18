@@ -11,6 +11,8 @@ Use the package manager [pip] install [git+https://github.com/AbhijithSanthoshJa
 ```python
 
 import bencodedecoder
-returns 42
+#enter integer encoded input
 bencodedecoder.decoder("i45e")
+#returns 45
+
 ```
