@@ -1,0 +1,22 @@
+# exclude byte compiled python bits
+*.pyc
+*.pyo
+
+# exclude pycharm's idea directory
+.idea
+__pycache__
+# exclude our virtualenv
+venv_pixmob/
+
+# no build
+build/
+
+# no dist
+dist/
+
+# no egg files
+*egg*
+
+# no coverage
+.coverage
+htmlcov/
