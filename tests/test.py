@@ -13,8 +13,8 @@ class S3TestCase(unittest.TestCase):
         """
         tearDown will run after execution of each test case(delete memory resources and reset objects or global variables)
         """
-        
-    def test_test_bencode_decoder_string(self):
+
+    def test_bencode_decoder_string(self):
         """
         Bencode Decoder unit test for string type input
         """
@@ -26,7 +26,7 @@ class S3TestCase(unittest.TestCase):
         self.assertEqual(expected_output,output)
         return
 
-    def test_test_bencode_decoder_int(self):
+    def test_bencode_decoder_int(self):
         """
         Bencode Decoder unit test for string type input
         """
@@ -35,5 +35,16 @@ class S3TestCase(unittest.TestCase):
         test_input = "i45e"
         output = decoder(test_input)
         #print(output)
+        self.assertEqual(expected_output,output)
+        return
+        
+    def test_bencode_decoder_list(self):
+        """
+        Bencode Decoder unit test for list type input
+        """
+        output =[]
+        expected_output = ['abc', 'xyze', 35]
+        test_input = "l3:abc4:xyzei35ee"
+        output = decoder(test_input)
         self.assertEqual(expected_output,output)
         return
