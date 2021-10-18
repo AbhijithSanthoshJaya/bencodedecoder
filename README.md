@@ -1,13 +1,10 @@
-<<<<<<< HEAD
-# bencode-decoder
-
-===================
+# <<<<<<< HEAD
 
 # Bencode Decoder Module
 
-===================
+A Python library that decodes a valid Bencoded data input
 
-# A Python library that decodes a valid Bencoded data input
+===================
 
 The module supports all 4 bencode data types.
 
@@ -16,7 +13,14 @@ The module supports all 4 bencode data types.
 Use the package manager [pip] install [git+https://github.com/AbhijithSanthoshJaya/bencodedecoder.git]
 
 # Usage
-=======
-# bencodedecoder
+
+python
+import bencodedecoder
+
+# returns 42
+
+bencodedecoder.decoder("i45e")
+
 repo for bencodedecoder module
->>>>>>> 6f09dcb3840b7475684eb589e3b2d2ec0cd3e158
+
+> > > > > > > 6f09dcb3840b7475684eb589e3b2d2ec0cd3e158
