@@ -4,15 +4,15 @@ A Python library that decodes a valid Bencoded data input. The module supports a
 
 ## Installation
 
-Use the package manager [pip] install [git+https://github.com/AbhijithSanthoshJaya/bencodedecoder.git]
+package_git_repo_url = https://github.com/AbhijithSanthoshJaya/bencodedecoder.git
+Use the package manager pip install git+[package_git_repo_url]
 
 ## Usage
 
 ```python
 
-import bencodedecoder
+import bencodeDecoder
 #enter integer encoded input
-bencodedecoder.decoder("i45e")
-#returns 45
+from bencodeDecoder import decoder.decoder as decode#returns 45
 
 ```
